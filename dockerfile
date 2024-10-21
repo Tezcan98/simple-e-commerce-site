@@ -13,5 +13,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Uygulama dosyalarını kopyala
 COPY . .
 
-# Flask uygulamasını çalıştır
-CMD ["python", "app.py"]
+# Flask uygulamasını çalışt
+CMD ["gunicorn", "--bind", "0.0.0.0:80", "app:app"]
+
